@@ -9,21 +9,20 @@
         {
             string czyGracDalej = "t";
 
-            while(czyGracDalej == "t")
+            while (liczbaKostkek < 3 || liczbaKostkek > 10)
             {
-                while(liczbaKostkek < 3 || liczbaKostkek > 10)
-                {
-                    Console.WriteLine("Ile kostek chcesz rzucic?(3-10)");
-                    liczbaKostkek = int.Parse(Console.ReadLine());
-                }
+                Console.WriteLine("Ile kostek chcesz rzucic?(3-10)");
+                liczbaKostkek = int.Parse(Console.ReadLine());
+            }
 
+            while (czyGracDalej == "t")
+            {
                 losujLiczbyDoKostek();
                 liczPunkty();
 
                 Console.WriteLine("Liczba uzyskanych punktow: " + liczbaPunktow);
 
                 wylosowaneLiczby.Clear();
-                liczbaKostkek = 0;
                 liczbaPunktow = 0;
                 Console.WriteLine("Jeszcze raz? (t/n)");
                 czyGracDalej = (string)(Console.ReadLine());
